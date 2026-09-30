@@ -39,14 +39,12 @@ country on the seller’s page. <a href="seeds/">Other ways to get the seeds</a>
 <p>Traditional uses on this site are history, not medical advice. Before using any herb, talk to a doctor or pharmacist — especially if you are pregnant, nursing, taking medication, or allergic to plants in the daisy family (Asteraceae), which includes seven of the ten herbs here.</p>
 <p>This site is free. Links to the Medicinal Garden Kit are affiliate links: if you buy through them, I earn a commission at no extra cost to you. <a href="about/#disclosure">Full disclosure</a> · <a href="about/#privacy">Privacy</a> · <a href="about/#credits">Photo credits</a> · <a href="https://www.instagram.com/cybergryadka/" rel="noopener">@cybergryadka on Instagram</a></p>
 <p>© 2026 The Herb Patch. Updated September 2026.</p></div></footer><script>(function(){var ua=navigator.userAgent||"";if(!/Instagram|FBAN|FBAV|FB_IAB|FBIOS/i.test(ua))return;
-var an=/Android/i.test(ua),ios=/iPhone|iPad|iPod/i.test(ua);
-function ext(u){if(an)return"intent://"+u.replace(/^https?:\/\//,"")+"#Intent;scheme=https;S.browser_fallback_url="+encodeURIComponent(u)+";end";if(ios)return"x-safari-"+u;return u}
-function go(u,fb){var left=false,m=function(){left=true};document.addEventListener("visibilitychange",m);window.addEventListener("pagehide",m);window.addEventListener("blur",m);
-location.href=ext(u);if(fb)setTimeout(function(){if(!left&&!document.hidden)location.href=u},1500)}
+var an=/Android/i.test(ua);
+function ext(u){return"intent://"+u.replace(/^https?:\/\//,"")+"#Intent;scheme=https;S.browser_fallback_url="+encodeURIComponent(u)+";end"}
 var b=document.createElement("div");b.className="iab";
-b.innerHTML='You are in the Instagram browser. <a href="#">Open in your browser</a> for easier checkout'+(ios?' — or tap ••• and choose “Open in external browser”.':'.');
-b.querySelector("a").addEventListener("click",function(e){e.preventDefault();go(location.href,false)});
+if(an){b.innerHTML='You are in the Instagram browser. <a href="'+ext(location.href)+'">Open in your browser</a> for easier checkout.';
+document.querySelectorAll('a[rel~="sponsored"]').forEach(function(a){a.href=ext(a.href)});
+try{if(!sessionStorage.getItem("iab")){sessionStorage.setItem("iab","1");location.href=ext(location.href)}}catch(e){}}
+else{b.innerHTML='<span class="iab-arrow">&#8599;</span>For easier checkout, tap <b>&bull;&bull;&bull;</b> at the top right and choose <b>&ldquo;Open in external browser&rdquo;</b>.'}
 document.body.insertBefore(b,document.body.firstChild);
-document.querySelectorAll('a[rel~="sponsored"]').forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();go(a.href,true)})});
-try{if(!sessionStorage.getItem("iab")){sessionStorage.setItem("iab","1");go(location.href,false)}}catch(e){}
 })();</script></body></html>
