@@ -45,6 +45,6 @@ var b=document.createElement("div");b.className="iab";
 if(an){b.innerHTML='You are in the Instagram browser. <a href="'+ext(location.href)+'">Open in your browser</a> for easier checkout.';
 document.querySelectorAll('a[rel~="sponsored"]').forEach(function(a){a.href=ext(a.href)});
 try{if(!sessionStorage.getItem("iab")){sessionStorage.setItem("iab","1");location.href=ext(location.href)}}catch(e){}}
-else{b.innerHTML='<span class="iab-arrow">&#8599;</span>For easier checkout, tap <b>&bull;&bull;&bull;</b> at the top right and choose <b>&ldquo;Open in external browser&rdquo;</b>.'}
+else{b.className="iab iab-ios";b.innerHTML='<span class="iab-arrow">&#8599;</span>For easier checkout, tap <b>&bull;&bull;&bull;</b> at the top right and choose <b>&ldquo;Open in external browser&rdquo;</b>.'}
 document.body.insertBefore(b,document.body.firstChild);
 })();</script></body></html>
